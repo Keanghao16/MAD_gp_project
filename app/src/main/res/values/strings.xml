@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">MAD Project</string>
+    <string name="app_name">Facebook</string>
+    <string name="email_phone_hint">Mobile number or email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Log In</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_account">Create new account</string>
 </resources>

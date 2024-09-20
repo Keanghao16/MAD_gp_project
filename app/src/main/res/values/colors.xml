@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    //color for facebook login
+        <color name="colorPrimary">#1877F2</color>
+        <color name="colorAccent">#42B72A</color>
 </resources>

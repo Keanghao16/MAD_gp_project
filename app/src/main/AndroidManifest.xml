@@ -12,5 +12,3 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MADProject"
         tools:targetApi="31" />
-
-</manifest>
