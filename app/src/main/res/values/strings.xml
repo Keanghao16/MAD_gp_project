@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">MAD Project</string>
+    <string name="nurtureu">nurtureU</string>
+    <string name="pet_logo">NurtureU Pet Logo</string>
+    <string name="adopt_nurtu">
+        Adopt. Nurture. Love.
+    </string>
+    <style name="get_started">
+
+        <item name="android:textSize">40.67sp</item>
+
+        <item name="android:textColor">@color/nurtureu_primary_green</item>
+    </style>
+
+    <string name="get_started">
+        Get Started
+    </string>
+
+
 </resources>
