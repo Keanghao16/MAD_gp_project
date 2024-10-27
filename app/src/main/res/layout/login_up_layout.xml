@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <!--        android:background="@drawable/sign_up_scr"-->
+    <!-- drawable/sign_up_scr.xml -->
+
+    <ImageView
+        android:id="@+id/pet_logo"
+        android:layout_width="70.25dp"
+        android:layout_height="72.5dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/pet_logo"
+        app:srcCompat="@drawable/ic_pet_logo" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/nurture"
+        android:layout_width="134.11dp"
+        android:layout_height="21.02dp"
+        android:layout_below="@id/pet_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2.5dp"
+        android:contentDescription="@string/nurtureu"
+        app:srcCompat="@drawable/ic_vector_logo" />
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+    <TextView
+        android:id="@+id/welcome_back"
+        android:layout_width="328dp"
+        android:layout_height="61dp"
+        android:layout_below="@id/nurture"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="@string/welcome_back"
+        android:textAppearance="@style/welcome_back"
+        android:gravity="center_horizontal|top" />
+
+    <TextView
+        android:id="@+id/ready_to_fi"
+        android:layout_width="328dp"
+        android:layout_height="24dp"
+        android:layout_below="@id/welcome_back"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="@string/ready_to_find_your_forever_friend"
+        android:textAppearance="@style/ready_to_find_your_forever_friend"
+        android:gravity="center_horizontal|top" />
+
+
+
+</RelativeLayout>
