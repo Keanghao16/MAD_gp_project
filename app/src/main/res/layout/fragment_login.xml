@@ -45,7 +45,7 @@
                 android:id="@+id/ready_to_fi"
                 android:layout_width="match_parent"
                 android:layout_height="24dp"
-                android:text="@string/ready_to_fi"
+                android:text="@style/ready_to_fi"
                 android:textAppearance="@style/ready_to_fi"
                 android:gravity="center_horizontal|top"
                 />

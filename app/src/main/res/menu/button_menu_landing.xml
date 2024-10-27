@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <item
+        android:id="@+id/mnuHome"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/mnuMessage"
+        android:icon="@drawable/ic_message"
+        android:title="@string/message" />
+    <item
+        android:id="@+id/mnuNotification"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/notification" />
+    <item
+        android:id="@+id/mnuProfile"
+        android:icon="@drawable/ic_profile"
+        android:title="@string/profile" />
 </menu>
