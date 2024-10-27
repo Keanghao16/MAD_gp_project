@@ -1,0 +1,27 @@
+<!-- Auto layout, variables, and unit scale are not yet supported -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sign_up_scr"
+    android:layout_width="412dp"
+    android:layout_height="917dp"
+    android:background="">
+
+
+    <TextView
+        android:id="@+id/adopt_nurtu"
+        android:layout_width="328dp"
+        android:layout_height="24dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/adopt_nurtu"
+        android:textAppearance="@style/adopt_nurtu" />
+
+
+    <TextView
+        android:id="@+id/get_started"
+        android:layout_width="328dp"
+        android:layout_height="61dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/get_started"
+        android:textAppearance="@style/get_started" />
+
+
+</RelativeLayout>

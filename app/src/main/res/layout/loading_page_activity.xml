@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/loading_scr"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/nurtureu_pe_logo"
+        android:layout_width="106.87dp"
+        android:layout_height="110.28dp"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/ic_pet_logo"
+        android:contentDescription="@string/pet_logo"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/nurture"
+        android:layout_width="204dp"
+        android:layout_height="31.98dp"
+        android:layout_below="@id/nurtureu_pe_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@drawable/ic_vector_logo"
+        android:contentDescription="@string/nurtureu"/>
+
+</RelativeLayout>
