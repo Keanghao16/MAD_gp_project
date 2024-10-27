@@ -3,11 +3,13 @@
     <string name="nurtureu">nurtureU</string>
     <string name="pet_logo">NurtureU Pet Logo</string>
     <string name="adopt_nurtu">
-        Adopt. Nurture. Love.
+        Adopt, Nurture, Love.
     </string>
     <style name="get_started">
 
         <item name="android:textSize">40.67sp</item>
+        <item name="android:fontFamily">@font/poppins_bold</item>
+
 
         <item name="android:textColor">@color/nurtureu_primary_green</item>
     </style>
@@ -15,7 +17,20 @@
     <string name="get_started">
         Get Started
     </string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
 
+    <string name="welcome_back">
+        Welcome Back!
+    </string>
+    <string name="ready_to_find_your_forever_friend">
+        Ready to find your forever friend?
+    </string>
+    <string name="email">Email</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="confirm_password">Confirm password</string>
 
     <style name="welcome_back">
         <item name="android:textSize">40.67sp</item>
