@@ -24,20 +24,9 @@
     <string name="notification">Notification</string>
     <string name="profile">Profile</string>
 
-<!--    <style name="get_started">-->
-<!--        <item name="android:textSize">40.67sp</item>-->
-<!--        <item name="android:fontFamily">@font/poppins_bold</item>-->
-<!--        <item name="android:textColor">@color/nurtureu_primary_green</item>-->
-<!--    </style>-->
+    <string name="show_followers_following_count">487 followers. 224 following</string>
+    <string name="icon">icon</string>
+    <string name="ms_failed_to_load_places">Failed to load Places. Please try again later</string>
 
-<!--    <style name="welcome_back">-->
-<!--        <item name="android:textSize">40.67sp</item>-->
-<!--        <item name="android:textColor">#7FCFA8</item>-->
-<!--    </style>-->
 
-<!--    <style name="ready_to_fi">-->
-<!--        <item name="android:textSize">16sp</item>-->
-<!--        <item name="android:letterSpacing">-0.02</item>-->
-<!--        <item name="android:textColor">#6A89A7</item>-->
-<!--    </style>-->
 </resources>

@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profile"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="336dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Root container for stacking the content, error layout, and progress bar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main content with NestedScrollView -->
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/lytContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:padding="16dp">
+
+                <!-- Top bar text -->
+                <TextView
+                    android:id="@+id/top_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/TextViewHeaderStyle"
+                    android:textSize="20sp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@string/profile"
+                    android:gravity="center"
+                    tools:ignore="MissingConstraints" />
+
+                <!-- Icon for additional options -->
+                <ImageView
+                    android:id="@+id/icon_more"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:srcCompat="@drawable/ic_more"
+                    app:tint="@color/color_gray"
+                    tools:ignore="MissingConstraints" />
+
+                <!-- User name text -->
+                <TextView
+                    android:id="@+id/text_user_name"
+                    style="@style/TextViewHeaderStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/profile"
+                    android:textSize="36sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/top_bar" />
+
+                <!-- Profile card with image -->
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/crdProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/bg_card"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_user_name"
+                    app:cardCornerRadius="60dp"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_profile"
+                        android:contentDescription="@string/profile" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- Followers/following text -->
+                <TextView
+                    android:id="@+id/text_followers_following_count"
+                    style="@style/TextViewHeaderStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/show_followers_following_count"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_user_name" />
+
+                <!-- Horizontal scroll view for categories -->
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:scrollbars="none"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text_followers_following_count">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <TextView
+                            android:id="@+id/text_boards"
+                            style="@style/TagViewStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="boards" />
+
+                        <TextView
+                            android:id="@+id/text_pins"
+                            style="@style/TextViewHeaderStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="pins"
+                            android:textColor="@color/color_gray" />
+
+                        <TextView
+                            android:id="@+id/text_tried"
+                            style="@style/TextViewHeaderStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="tried"
+                            android:textColor="@color/color_gray" />
+
+                        <TextView
+                            android:id="@+id/text_followers"
+                            style="@style/TextViewHeaderStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="followers"
+                            android:textColor="@color/color_gray" />
+
+                        <TextView
+                            android:id="@+id/text_tables"
+                            style="@style/TextViewHeaderStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:paddingLeft="20dp"
+                            android:paddingTop="8dp"
+                            android:paddingRight="20dp"
+                            android:paddingBottom="8dp"
+                            android:text="tables"
+                            android:textColor="@color/color_gray" />
+                    </LinearLayout>
+                </HorizontalScrollView>
+
+                <!-- RecyclerView for displaying profile data -->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="32dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                    tools:listitem="@layout/view_holder_profile_post" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <!-- Progress Bar displayed during loading -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <!-- Error Layout to be displayed on failure -->
+        <LinearLayout
+            android:id="@+id/lytError"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/ms_failed_to_load_places"/>
+        </LinearLayout>
+    </FrameLayout>
+</layout>
