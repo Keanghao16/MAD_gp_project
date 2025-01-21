@@ -3,7 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Root container for stacking the content, error layout, and progress bar -->
+    <data>
+        <variable
+            name="viewModel"
+            type="kh.edu.rupp.ite.madproject.viewmodel.ProfileViewModel" />
+    </data>
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -45,12 +50,11 @@
 
                 <!-- User name text -->
                 <TextView
-                    android:id="@+id/text_user_name"
+                    android:id="@+id/tvName"
                     style="@style/TextViewHeaderStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="24dp"
-                    android:text="@string/profile"
                     android:textSize="36sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/top_bar" />
@@ -62,7 +66,7 @@
                     android:layout_height="100dp"
                     android:background="@drawable/bg_card"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/text_user_name"
+                    app:layout_constraintTop_toTopOf="@+id/tvName"
                     app:cardCornerRadius="60dp"
                     tools:ignore="MissingConstraints">
 
@@ -76,94 +80,47 @@
                 </androidx.cardview.widget.CardView>
 
                 <!-- Followers/following text -->
-                <TextView
-                    android:id="@+id/text_followers_following_count"
-                    style="@style/TextViewHeaderStyle"
+                <LinearLayout
+                    android:id="@+id/lytFollowers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:orientation="horizontal"
                     android:layout_marginTop="24dp"
-                    android:text="@string/show_followers_following_count"
-                    android:textSize="14sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_user_name" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvName">
 
-                <!-- Horizontal scroll view for categories -->
-                <HorizontalScrollView
-                    android:id="@+id/horizontalScrollView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:scrollbars="none"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/text_followers_following_count">
-
-                    <LinearLayout
+                    <TextView
+                        android:id="@+id/tvPosts"
+                        style="@style/TextViewHeaderStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
+                        android:textSize="14sp"
+                        android:layout_marginEnd="16dp" />
 
-                        <TextView
-                            android:id="@+id/text_boards"
-                            style="@style/TagViewStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:text="boards" />
+                    <TextView
+                        android:id="@+id/tvFollowers"
+                        style="@style/TextViewHeaderStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:layout_marginEnd="16dp" />
 
-                        <TextView
-                            android:id="@+id/text_pins"
-                            style="@style/TextViewHeaderStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="8dp"
-                            android:paddingRight="20dp"
-                            android:paddingBottom="8dp"
-                            android:text="pins"
-                            android:textColor="@color/color_gray" />
+                    <TextView
+                        android:id="@+id/tvFollowing"
+                        style="@style/TextViewHeaderStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp" />
+                </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/text_tried"
-                            style="@style/TextViewHeaderStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="8dp"
-                            android:paddingRight="20dp"
-                            android:paddingBottom="8dp"
-                            android:text="tried"
-                            android:textColor="@color/color_gray" />
-
-                        <TextView
-                            android:id="@+id/text_followers"
-                            style="@style/TextViewHeaderStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="8dp"
-                            android:paddingRight="20dp"
-                            android:paddingBottom="8dp"
-                            android:text="followers"
-                            android:textColor="@color/color_gray" />
-
-                        <TextView
-                            android:id="@+id/text_tables"
-                            style="@style/TextViewHeaderStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="8dp"
-                            android:paddingLeft="20dp"
-                            android:paddingTop="8dp"
-                            android:paddingRight="20dp"
-                            android:paddingBottom="8dp"
-                            android:text="tables"
-                            android:textColor="@color/color_gray" />
-                    </LinearLayout>
-                </HorizontalScrollView>
+                <!-- Bio text -->
+                <TextView
+    android:id="@+id/tvBio"
+    style="@style/BioTextViewStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/lytFollowers" />
 
                 <!-- RecyclerView for displaying profile data -->
                 <androidx.recyclerview.widget.RecyclerView
@@ -174,7 +131,7 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBio"
                     tools:listitem="@layout/view_holder_profile_post" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
@@ -185,7 +142,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <!-- Error Layout to be displayed on failure -->
         <LinearLayout
@@ -199,7 +156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ms_failed_to_load_places"/>
+                android:text="@string/ms_failed_to_load_places" />
         </LinearLayout>
     </FrameLayout>
 </layout>

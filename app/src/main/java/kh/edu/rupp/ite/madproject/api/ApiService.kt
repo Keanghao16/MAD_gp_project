@@ -9,7 +9,4 @@ interface ApiService {
 
     @GET("profile.json")
     suspend fun loadProfileData(): ApiResponse<Profile>
-
-
-
 }

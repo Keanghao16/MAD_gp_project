@@ -6,6 +6,8 @@ data class Profile(
     val lastName: String,
     val follower: Int,
     val following: Int,
+    val posts: Int,
+    val bio: String,
 
     val userPosts: List<UserPosts>
 

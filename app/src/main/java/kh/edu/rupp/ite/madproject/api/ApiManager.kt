@@ -11,6 +11,7 @@ object ApiManager {
 
         if (apiService==null){
             val retrofit = Retrofit.Builder()
+//                .baseUrl("http://10.1.24.249/")
                 .baseUrl("http://192.168.100.48/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();

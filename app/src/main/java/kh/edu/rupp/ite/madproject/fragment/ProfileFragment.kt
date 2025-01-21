@@ -16,15 +16,13 @@ import kh.edu.rupp.ite.madproject.model.State
 import kh.edu.rupp.ite.madproject.viewmodel.ProfileViewModel
 import kotlinx.coroutines.launch
 
-
 class ProfileFragment : Fragment() {
 
     private val viewModel by viewModels<ProfileViewModel>()
     private lateinit var binding: FragmentProfileBinding
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentProfileBinding.inflate(inflater, container, false)
@@ -33,7 +31,6 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         // Collect the StateFlow
         viewLifecycleOwner.lifecycleScope.launch {
@@ -54,25 +51,25 @@ class ProfileFragment : Fragment() {
             }
         }
 
-
         viewModel.loadProfileData()
     }
 
     private fun fetchProfileData(profileData: Profile) {
+    Picasso.get()
+        .load(profileData.profileImg)
+        .into(binding.profileImage)
+    binding.tvName.text = "${profileData.firstName} ${profileData.lastName}"
+    binding.tvPosts.text = "${profileData.posts} posts"
+    binding.tvFollowers.text = "${profileData.follower} followers"
+    binding.tvFollowing.text = "${profileData.following} following"
+    binding.tvBio.text = profileData.bio
 
-        Picasso.get()
-            .load(profileData.profileImg)
-            .into(binding.profileImage)
-        binding.textUserName.text = "${profileData.firstName} ${profileData.lastName}"
 
-        binding.textFollowersFollowingCount.text = "${profileData.follower} Followers, ${profileData.following} Following"
-
-
-        // Set up RecyclerView for user posts
-        val userPostsAdapter = UserPostsAdapter(profileData.userPosts)
-        binding.recyclerView.adapter = userPostsAdapter
-        binding.recyclerView.layoutManager = LinearLayoutManager(context)
-    }
+    // Set up RecyclerView for user posts
+    val userPostsAdapter = UserPostsAdapter(profileData.userPosts)
+    binding.recyclerView.adapter = userPostsAdapter
+    binding.recyclerView.layoutManager = LinearLayoutManager(context)
+}
 
     private fun showLoading() {
         binding.lytContent.visibility = View.GONE
@@ -88,5 +85,4 @@ class ProfileFragment : Fragment() {
         binding.lytContent.visibility = View.GONE
         binding.lytError.visibility = View.VISIBLE
     }
-
 }
